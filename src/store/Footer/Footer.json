@@ -7,7 +7,7 @@
     },
     "footer": {
         "company_info": {
-            "logo": "public/Icon.svg",
+            "logo": "/Icon.svg",
             "name": "Nexcent",
             "copyright": "Copyright © 2020 Landify UI Kit. All rights reserved",
             "social_links": [

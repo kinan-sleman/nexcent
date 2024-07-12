@@ -3,12 +3,12 @@
         "description": "Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.",
         "logo": "/customerLogo.jpg",
         "images": [
-            "public/logos/vector1.jpg",
-            "public/logos/vector2.jpg",
-            "public/logos/vector3.jpg",
-            "public/logos/vector4.jpg",
-            "public/logos/vector5.jpg",
-            "public/logos/vector6.jpg"
+            "/logos/vector1.jpg",
+            "/logos/vector2.jpg",
+            "/logos/vector3.jpg",
+            "/logos/vector4.jpg",
+            "/logos/vector5.jpg",
+            "/logos/vector6.jpg"
         ],
         "name": "Tim Smith",
         "association": "British Dragon Boat Racing Association",
