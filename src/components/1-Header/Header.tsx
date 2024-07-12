@@ -36,7 +36,8 @@ const Header: React.FC = () => {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
   };
-
+  const isProduction = process.env.NODE_ENV === 'production';
+  const base = isProduction ? '/nexcent/' : '/';
   return (
     <motion.header
       className="bg-white shadow"
@@ -47,7 +48,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between md:justify-around items-center p-4">
         <motion.div className="flex items-center" variants={menuVariants}>
           <img
-            src={navigationLinks.icon}
+            src={isProduction ? process.env.PUBLIC_URL + navigationLinks.icon : navigationLinks.icon}
             alt="Nexcent Logo"
             className="w-6 h-6 mr-2"
           />

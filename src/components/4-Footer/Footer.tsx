@@ -36,6 +36,7 @@ const Footer: React.FC = () => {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
+  const isProduction = process.env.NODE_ENV === 'production';
 
   return (
     <motion.div
@@ -71,7 +72,11 @@ const Footer: React.FC = () => {
             <div className="flex flex-col max-w-[250px] gap-5">
               <div className="flex gap-2">
                 <img
-                  src={company_info.logo}
+                  src={
+                    isProduction
+                      ? process.env.PUBLIC_URL + company_info.logo
+                      : company_info.logo
+                  }
                   alt={`${company_info.name} Logo`}
                   className="w-6 h-6 mr-2"
                 />

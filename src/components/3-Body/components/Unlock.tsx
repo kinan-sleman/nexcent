@@ -12,14 +12,15 @@ interface UnlockProps {
 const Unlock: React.FC<UnlockProps> = ({ image, title, description, btn }) => {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
+  const isProduction = process.env.NODE_ENV === 'production';
+  
   return (
     <motion.div
       ref={ref}
@@ -29,7 +30,11 @@ const Unlock: React.FC<UnlockProps> = ({ image, title, description, btn }) => {
       variants={variants}
     >
       <div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
-        <img src={image} alt="Illustration" className="size-[300px]" />
+        <img
+          src={isProduction ? process.env.PUBLIC_URL + image : image}
+          alt="Illustration"
+          className="size-[300px]"
+        />
       </div>
       <div className="md:w-1/2 text-center md:text-left">
         <h2 className="text-3xl font-semibold mb-4">{title}</h2>

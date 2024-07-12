@@ -18,6 +18,7 @@ const UpdateCard: React.FC<UpdateCardProps> = ({ image, title, link }) => {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
+  const isProduction = process.env.NODE_ENV === 'production';
 
   return (
     <motion.div
@@ -27,7 +28,11 @@ const UpdateCard: React.FC<UpdateCardProps> = ({ image, title, link }) => {
       animate={inView ? "visible" : "hidden"}
       className="relative bg-white w-full md:w-[384px] rounded-lg "
     >
-      <img className="h-48 w-full object-cover" src={image} alt={title} />
+      <img className="h-48 w-full object-cover" src={
+                  isProduction
+                    ? process.env.PUBLIC_URL + image
+                    : image
+                } alt={title} />
       <div className="absolute translate-y-[30px] inset-0 flex justify-center items-center">
         <div className="shadow-md py-1 px-2 z-10 bg-[rgb(244,250,255)] rounded w-[240px] text-center translate-y-[25%]">
           <h3 className="text-lg font-medium text-gray-900">{title}</h3>

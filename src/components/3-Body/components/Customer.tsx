@@ -30,7 +30,7 @@ const Customer: React.FC<CustomerProps> = ({
       setIsVisible(true);
     }
   }, [inView]);
-
+  const isProduction = process.env.NODE_ENV === "production";
   const animationVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -51,7 +51,11 @@ const Customer: React.FC<CustomerProps> = ({
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <img className="size-[300px]" src={logo} alt="Company logo" />
+          <img
+            className="size-[300px]"
+            src={isProduction ? process.env.PUBLIC_URL + logo : logo}
+            alt="Company logo"
+          />
         </motion.div>
         <motion.div
           className="flex flex-col md:gap-[10px] items-center md:items-start text-center md:text-start"
@@ -72,7 +76,11 @@ const Customer: React.FC<CustomerProps> = ({
                 <motion.img
                   key={index}
                   className="size-[30px]"
-                  src={customerLogo}
+                  src={
+                  isProduction
+                    ? process.env.PUBLIC_URL + customerLogo
+                    : customerLogo
+                }
                   alt="Customer logo"
                   variants={animationVariants}
                   initial="hidden"

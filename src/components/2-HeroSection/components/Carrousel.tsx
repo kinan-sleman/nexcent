@@ -10,6 +10,7 @@ const Carousel: React.FC = () => {
     (state: RootState) => state.carousel.carousel
   );
   const dispatch = useDispatch<AppDispatch>();
+  const isProduction = process.env.NODE_ENV === "production";
 
   useEffect(() => {
     dispatch(loadCarousel());
@@ -36,7 +37,10 @@ const Carousel: React.FC = () => {
   }
 
   return (
-    <div ref={ref} className="relative bg-gray-100 h-auto flex items-center md:h-[416px]">
+    <div
+      ref={ref}
+      className="relative bg-gray-100 h-auto flex items-center md:h-[416px]"
+    >
       <div className="container mx-auto flex justify-around items-center py-4 px-6 flex-col md:flex-row">
         <AnimatePresence>
           {inView && (
@@ -83,7 +87,11 @@ const Carousel: React.FC = () => {
               exit="exit"
             >
               <motion.img
-                src={CarouselArr[currentSlide].image}
+                src={
+                  isProduction
+                    ? process.env.PUBLIC_URL + CarouselArr[currentSlide].image
+                    : CarouselArr[currentSlide].image
+                }
                 alt="Carousel Slide"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover"
               />
