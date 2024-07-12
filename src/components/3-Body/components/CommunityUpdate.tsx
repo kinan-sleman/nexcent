@@ -47,7 +47,7 @@ const CommunityUpdate: React.FC = () => {
       className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="flex items-center justify-center flex-col">
-        <h2 className="text-3xl font-[600] text-gray-900">
+        <h2 className="text-3xl text-center font-[600] text-gray-900">
           {communityUpdatesData.title}
         </h2>
         <p className="max-w-[500px] mt-4 text-lg text-gray-500 text-center">
