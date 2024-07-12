@@ -30,7 +30,7 @@ const UpdateCard: React.FC<UpdateCardProps> = ({ image, title, link }) => {
     >
       <img className="h-48 w-full object-cover" src={
                   isProduction
-                    ? process.env.PUBLIC_URL + image
+                    ? import.meta.env.VITE_PUBLIC_URL + image
                     : image
                 } alt={title} />
       <div className="absolute translate-y-[30px] inset-0 flex justify-center items-center">

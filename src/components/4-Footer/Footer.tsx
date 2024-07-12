@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 <img
                   src={
                     isProduction
-                      ? process.env.PUBLIC_URL + company_info.logo
+                      ? import.meta.env.VITE_PUBLIC_URL + company_info.logo
                       : company_info.logo
                   }
                   alt={`${company_info.name} Logo`}

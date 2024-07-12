@@ -53,7 +53,7 @@ const Customer: React.FC<CustomerProps> = ({
         >
           <img
             className="size-[300px]"
-            src={isProduction ? process.env.PUBLIC_URL + logo : logo}
+            src={isProduction ? import.meta.env.VITE_PUBLIC_URL + logo : logo}
             alt="Company logo"
           />
         </motion.div>
@@ -78,7 +78,7 @@ const Customer: React.FC<CustomerProps> = ({
                   className="size-[30px]"
                   src={
                   isProduction
-                    ? process.env.PUBLIC_URL + customerLogo
+                    ? import.meta.env.VITE_PUBLIC_URL + customerLogo
                     : customerLogo
                 }
                   alt="Customer logo"

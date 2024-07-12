@@ -89,7 +89,7 @@ const Carousel: React.FC = () => {
               <motion.img
                 src={
                   isProduction
-                    ? process.env.PUBLIC_URL + CarouselArr[currentSlide].image
+                    ? import.meta.env.VITE_PUBLIC_URL + CarouselArr[currentSlide].image
                     : CarouselArr[currentSlide].image
                 }
                 alt="Carousel Slide"

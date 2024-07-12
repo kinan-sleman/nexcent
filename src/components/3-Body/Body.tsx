@@ -8,7 +8,6 @@ import { AppDispatch, RootState } from "../../store/store";
 import { loadUnlocks } from "../../store/Unlock/Reducer";
 import { loadCustomers } from "../../store/Customer/Reducer";
 import { loadAchievements } from "../../store/Achievement/Reducer";
-
 export default function Body() {
   const AchievementsData = useSelector(
     (state: RootState) => state.achievement.Achievements

@@ -10,7 +10,6 @@ const Header: React.FC = () => {
     (state: RootState) => state.header.navigationLinks
   );
   const dispatch = useDispatch<AppDispatch>();
-
   useEffect(() => {
     dispatch(loadNavigationLinks());
   }, [dispatch]);
@@ -31,7 +30,6 @@ const Header: React.FC = () => {
       transition: { duration: 0.5 }
     }
   };
-
   const menuVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
@@ -47,7 +45,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between md:justify-around items-center p-4">
         <motion.div className="flex items-center" variants={menuVariants}>
           <img
-            src={isProduction ? process.env.PUBLIC_URL + navigationLinks.icon : navigationLinks.icon}
+            src={isProduction ? import.meta.env.VITE_PUBLIC_URL + navigationLinks.icon : navigationLinks.icon}
             alt="Nexcent Logo"
             className="w-6 h-6 mr-2"
           />

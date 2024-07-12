@@ -31,7 +31,7 @@ const Unlock: React.FC<UnlockProps> = ({ image, title, description, btn }) => {
     >
       <div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
         <img
-          src={isProduction ? process.env.PUBLIC_URL + image : image}
+          src={isProduction ? import.meta.env.VITE_PUBLIC_URL + image : image}
           alt="Illustration"
           className="size-[300px]"
         />
