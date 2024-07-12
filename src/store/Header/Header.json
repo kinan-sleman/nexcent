@@ -1,0 +1,40 @@
+{
+  "title": "Nexcent",
+  "icon": "/Icon.svg",
+  "btn": {
+    "title": "Register Now",
+    "link": ""
+  },
+  "links": [
+    {
+      "id": 1,
+      "title": "Home",
+      "url": "#home",
+      "icon": "home"
+    },
+    {
+      "id": 2,
+      "title": "Features",
+      "url": "#features",
+      "icon": "star"
+    },
+    {
+      "id": 3,
+      "title": "Community",
+      "url": "#community",
+      "icon": "users"
+    },
+    {
+      "id": 4,
+      "title": "Blog",
+      "url": "#blog",
+      "icon": "book-open"
+    },
+    {
+      "id": 5,
+      "title": "Pricing",
+      "url": "#pricing",
+      "icon": "currency-dollar"
+    }
+  ]
+}

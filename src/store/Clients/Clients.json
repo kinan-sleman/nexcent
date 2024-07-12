@@ -1,0 +1,32 @@
+{
+  "title": "Our Clients",
+  "description": "We have been working with some Fortune 500+ clients",
+  "clients": [
+    "icon-amazon",
+    "icon-google",
+    "icon-hangouts",
+    "icon-google-drive",
+    "icon-facebook2",
+    "icon-instagram",
+    "icon-whatsapp",
+    "icon-spotify",
+    "icon-telegram",
+    "icon-twitter",
+    "icon-vk",
+    "icon-renren",
+    "icon-twitch",
+    "icon-vimeo2",
+    "icon-lanyrd",
+    "icon-flickr3",
+    "icon-dribbble",
+    "icon-behance2",
+    "icon-deviantart",
+    "icon-steam2",
+    "icon-github",
+    "icon-npm",
+    "icon-wordpress",
+    "icon-joomla",
+    "icon-soundcloud2",
+    "icon-skype"
+  ]
+}

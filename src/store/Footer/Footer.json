@@ -1,0 +1,90 @@
+{
+    "is_demo": false,
+    "demo_title": "Pellentesque suscipit fringilla libero eu.",
+    "demo_btn": {
+        "title": "Get a Demo",
+        "link": "#register"
+    },
+    "footer": {
+        "company_info": {
+            "logo": "/Icon.svg",
+            "name": "Nexcent",
+            "copyright": "Copyright © 2020 Landify UI Kit. All rights reserved",
+            "social_links": [
+                {
+                    "platform": "youtube-with-circle",
+                    "link": "#"
+                },
+                {
+                    "platform": "facebook2",
+                    "link": "#"
+                },
+                {
+                    "platform": "twitter",
+                    "link": "#"
+                },
+                {
+                    "platform": "instagram",
+                    "link": "#"
+                }
+            ]
+        },
+        "sections": [
+            {
+                "title": "Company",
+                "links": [
+                    {
+                        "title": "About us",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Blog",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Contact us",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Pricing",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Testimonials",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Support",
+                "links": [
+                    {
+                        "title": "Help center",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Terms of service",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Legal",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Privacy policy",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Status",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "newsletter": {
+            "title": "Stay up to date",
+            "placeholder": "Your email address",
+            "button_icon": "icon-send-o"
+        }
+    }
+}
