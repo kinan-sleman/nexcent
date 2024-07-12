@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import UnlocksData from "./Unlock.json";
 
 interface btnItem {
-    title: string;
-    link: string;
+  title: string;
+  link: string;
 }
 
 interface UnlockItem {
@@ -14,32 +14,28 @@ interface UnlockItem {
   btn: btnItem;
 }
 
-interface Unlock {
-  unlock: UnlockItem[];
-}
-
 interface UnlockState {
-  Unlocks: Unlock | null;
+  unlocks: UnlockItem[];
 }
 
 const initialState: UnlockState = {
-  Unlocks: null,
+  unlocks: [],
 };
 
-const UnlockSlice = createSlice({
+const unlockSlice = createSlice({
   name: "unlock",
   initialState,
   reducers: {
-    setUnlocks(state, action: PayloadAction<Unlock>) {
-      state.Unlocks = action.payload;
+    setUnlocks(state, action: PayloadAction<UnlockItem[]>) {
+      state.unlocks = action.payload;
     },
   },
 });
 
-export const { setUnlocks } = UnlockSlice.actions;
+export const { setUnlocks } = unlockSlice.actions;
 
 export const loadUnlocks = () => (dispatch: any) => {
-  dispatch(setUnlocks(UnlocksData));
+  dispatch(setUnlocks(UnlocksData)); // استخدام UnlocksData.unlock بدلاً من UnlocksData
 };
 
-export default UnlockSlice.reducer;
+export default unlockSlice.reducer;

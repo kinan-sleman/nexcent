@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../../store/store";
 import { loadCommunities } from "../../../store/Communities/Reducer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Community: React.FC = () => {
   const communitiesData = useSelector((state: RootState) => state.communities);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   useEffect(() => {

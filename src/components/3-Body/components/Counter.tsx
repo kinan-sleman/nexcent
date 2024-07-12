@@ -16,15 +16,17 @@ const Counter: React.FC<CounterProps> = ({ from, to, onInView }) => {
   });
 
   useEffect(() => {
-    const node = nodeRef.current;
+    let controls: any;
 
-    let controls;
+    const node = nodeRef.current;
 
     if (inView && node) {
       controls = animate(from, to, {
         duration: 1,
         onUpdate(value) {
-          node.textContent = Math.ceil(value).toLocaleString();
+          if (node) {
+            node.textContent = Math.ceil(value).toLocaleString();
+          }
         },
       });
     }
@@ -40,7 +42,15 @@ const Counter: React.FC<CounterProps> = ({ from, to, onInView }) => {
     };
   }, [from, to, inView, onInView]);
 
-  return <p ref={(el) => { ref(el); nodeRef.current = el; }} />;
-}
+  const setRefs = (el: HTMLParagraphElement | null) => {
+    ref(el);
+    // Modify the nodeRef's current property only when el exists
+    if (el) {
+      (nodeRef as React.MutableRefObject<HTMLParagraphElement | null>).current = el;
+    }
+  };
+
+  return <p ref={setRefs} />;
+};
 
 export default Counter;

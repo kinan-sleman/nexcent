@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import { loadFooter } from "../../store/Footer/Reducer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Footer: React.FC = () => {
   const footerData = useSelector((state: RootState) => state.footer.footer);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(loadFooter());

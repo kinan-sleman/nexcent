@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../../store/store";
 import { loadCommunityUpdates } from "../../../store/CommunityUpdate/Reducer";
 import UpdateCard from "./UpdateCard";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ const CommunityUpdate: React.FC = () => {
   const communityUpdatesData = useSelector(
     (state: RootState) => state.communityUpdate.communityUpdates
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const { ref, inView } = useInView({
     triggerOnce: true,

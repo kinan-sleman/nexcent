@@ -4,7 +4,7 @@ import Customer from "./components/Customer";
 import Unlock from "./components/Unlock";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import { loadUnlocks } from "../../store/Unlock/Reducer";
 import { loadCustomers } from "../../store/Customer/Reducer";
 import { loadAchievements } from "../../store/Achievement/Reducer";
@@ -14,15 +14,16 @@ export default function Body() {
     (state: RootState) => state.achievement.Achievements
   );
 
-  const UnlocksData = useSelector((state: RootState) => state.unlock.Unlocks);
+  const UnlocksData = useSelector((state: RootState) => state.unlock.unlocks);
   const CustomersData = useSelector(
     (state: RootState) => state.customer.Customers
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(loadAchievements());
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(loadUnlocks());
   }, [dispatch]);
@@ -31,12 +32,14 @@ export default function Body() {
     dispatch(loadCustomers());
   }, [dispatch]);
 
+  // تحقق من وجود بيانات قبل استخدامها
   const beforeAchievements = UnlocksData?.filter(
     (unlock) => unlock.type === "before Achievements"
-  );
+  ) || [];
+
   const afterAchievements = UnlocksData?.filter(
     (unlock) => unlock.type === "after Achievements"
-  );
+  ) || [];
 
   return (
     <>

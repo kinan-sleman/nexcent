@@ -15,12 +15,8 @@ interface CustomerItem {
   btn: btnItem;
 }
 
-interface Customer {
-  Customer: CustomerItem[];
-}
-
 interface CustomerState {
-  Customers: Customer | null;
+  Customers: CustomerItem[] | null;
 }
 
 const initialState: CustomerState = {
@@ -31,7 +27,7 @@ const CustomerSlice = createSlice({
   name: "Customer",
   initialState,
   reducers: {
-    setCustomers(state, action: PayloadAction<Customer>) {
+    setCustomers(state, action: PayloadAction<CustomerItem[]>) {
       state.Customers = action.payload;
     },
   },

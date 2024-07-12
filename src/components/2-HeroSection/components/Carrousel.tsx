@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../../store/store";
 import { loadCarousel } from "../../../store/Carousel/Reducer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -9,7 +9,7 @@ const Carousel: React.FC = () => {
   const CarouselArr = useSelector(
     (state: RootState) => state.carousel.carousel
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(loadCarousel());

@@ -1,6 +1,6 @@
 {
   "title": "Nexcent",
-  "icon": "/Icon.svg",
+  "icon": "public/Icon.svg",
   "btn": {
     "title": "Register Now",
     "link": ""

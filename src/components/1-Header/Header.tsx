@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import { loadNavigationLinks } from "../../store/Header/Reducer";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const navigationLinks = useSelector(
     (state: RootState) => state.header.navigationLinks
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(loadNavigationLinks());

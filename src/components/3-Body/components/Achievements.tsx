@@ -15,7 +15,7 @@ const Achievements: React.FC<AchievementProps> = ({
   const words = title.split(" ");
   const firstThreeWords = words.slice(0, 3).join(" ");
   const remainingWords = words.slice(3).join(" ");
-
+  const onInViewHandle = ()=>{}
   return (
     <div className="bg-gray-100 py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex items-center flex-col md:flex-row justify-around">
@@ -36,6 +36,7 @@ const Achievements: React.FC<AchievementProps> = ({
                     <Counter
                       from={0}
                       to={statistic.value}
+                      onInView={onInViewHandle}
                     />
                   </span>
                 </div>

@@ -1,4 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, ThunkAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
+import { Action } from "redux";
 import navigationLinksData from "./Header.json";
 
 interface NavigationLinkItem {
@@ -45,7 +47,9 @@ const headerSlice = createSlice({
 
 export const { toggleMenu, setNavigationLinks } = headerSlice.actions;
 
-export const loadNavigationLinks = () => (dispatch: any) => {
+type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
+
+export const loadNavigationLinks = (): AppThunk => (dispatch) => {
   dispatch(setNavigationLinks(navigationLinksData));
 };
 

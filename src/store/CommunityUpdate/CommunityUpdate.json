@@ -3,17 +3,17 @@
     "description": "The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership incomeand lots more.",
     "updates": [
         {
-            "image": "/community-updates/1.jpg",
+            "image": "public/community-updates/1.jpg",
             "title": "Creating Streamlined Safeguarding Processes with OneRen",
             "link": "#"
         },
         {
-            "image": "/community-updates/2.jpg",
+            "image": "public/community-updates/2.jpg",
             "title": "What are your safeguarding responsibilities and how can you manage them?",
             "link": "#"
         },
         {
-            "image": "/community-updates/3.jpg",
+            "image": "public/community-updates/3.jpg",
             "title": "Revamping the Membership Model with Triathlon Australia",
             "link": "#"
         }

@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../../store/store";
 import { loadClients } from "../../../store/Clients/Reducer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Clients: React.FC = () => {
   const clientsData = useSelector((state: RootState) => state.clients.clients);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { ref, inView } = useInView({
     threshold: 0.5, 
     triggerOnce: true

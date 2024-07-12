@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import AchievementsData from "./Achievement.json";
 
 interface statisticsItem {
-    label: string;
-    value: number;
+  label: string;
+  value: number;
 }
 
 interface AchievementItem {
@@ -13,12 +13,8 @@ interface AchievementItem {
   statistics: statisticsItem[];
 }
 
-interface Achievement {
-  achievement: AchievementItem[];
-}
-
 interface AchievementState {
-  Achievements: Achievement | null;
+  Achievements: AchievementItem[] | null;
 }
 
 const initialState: AchievementState = {
@@ -29,7 +25,7 @@ const AchievementSlice = createSlice({
   name: "achievement",
   initialState,
   reducers: {
-    setAchievements(state, action: PayloadAction<Achievement>) {
+    setAchievements(state, action: PayloadAction<AchievementItem[]>) {
       state.Achievements = action.payload;
     },
   },

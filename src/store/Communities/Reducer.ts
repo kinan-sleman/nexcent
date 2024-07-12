@@ -24,7 +24,9 @@ const communitiesSlice = createSlice({
   initialState,
   reducers: {
     setCommunities(state, action: PayloadAction<CommunitiesState>) {
-      return action.payload; 
+      state.title = action.payload.title;
+      state.description = action.payload.description;
+      state.communities = action.payload.communities;
     },
   },
 });
