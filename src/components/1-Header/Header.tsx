@@ -37,7 +37,6 @@ const Header: React.FC = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
   };
   const isProduction = process.env.NODE_ENV === 'production';
-  const base = isProduction ? '/nexcent/' : '/';
   return (
     <motion.header
       className="bg-white shadow"
